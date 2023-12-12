@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-export default function SelectedContact({selectedContactId}) {
+export default function SelectedContact({ selectedContactId }) {
     const [contact, setContact] = useState({})
     console.log("Contact:", selectedContactId);
 
@@ -23,7 +23,7 @@ export default function SelectedContact({selectedContactId}) {
         return () => (ignore = true);
     }, [])
 
-   
+
     return (
         <div>
             <h2> {contact.name} </h2>
@@ -33,7 +33,6 @@ export default function SelectedContact({selectedContactId}) {
             <p> <strong> Phone: </strong> {contact.phone} </p>
             <p> <strong> Website: </strong> {contact.website} </p>
             <p> <strong> Company: </strong> {contact.company.name}: {contact.company.catchPhrase} - <em> {contact.company.bs} </em> </p>
-            <button onClick={()=>{selectedContactId(null)}}> See List </button>
         </div>
     )
 }
