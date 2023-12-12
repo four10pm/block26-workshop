@@ -1,13 +1,24 @@
 import { useState } from 'react'
 import ContactList from './components/contactlist.jsx'
 import './App.css'
+import ContactRow from './components/contactrow.jsx';
+import SelectedContact from './components/selectedcontact.jsx';
 
-function App() {
-  
+function App(contact) {
+  const [selectedContactId, setSelectedContactId] = useState(null);
+  console.log(selectedContactId);
+
+  const display = () => {
+    return selectedContactId ?
+        <SelectedContact selectedContactId={selectedContactId}/>
+      : <ContactList setSelectedContactId={setSelectedContactId} />
+  }
 
   return (
     <>
-     <ContactList /> 
+      <div>
+        {display()}
+      </div>
     </>
   )
 }
