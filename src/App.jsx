@@ -12,7 +12,7 @@ function App(contact) {
     return selectedContactId ?
       <div>
         <SelectedContact selectedContactId={selectedContactId} />
-        <button onClick={() => { setSelectedContactId(null)}}> See List </button>
+        <button onClick={() => { setSelectedContactId(null) }}> See List </button>
       </div>
       : <ContactList setSelectedContactId={setSelectedContactId} />
   }
