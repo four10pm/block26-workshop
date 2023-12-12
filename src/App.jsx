@@ -11,8 +11,7 @@ function App(contact) {
   const display = () => {
     return selectedContactId ?
       <div>
-        <SelectedContact selectedContactId={selectedContactId} />
-        <button onClick={() => { setSelectedContactId(null) }}> See List </button>
+        <SelectedContact selectedContactId={selectedContactId} setSelectedContactId={setSelectedContactId} />
       </div>
       : <ContactList setSelectedContactId={setSelectedContactId} />
   }
